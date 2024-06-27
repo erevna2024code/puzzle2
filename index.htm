@@ -162,9 +162,9 @@
         </div>
 
         <div id="question14" class="question">
-            <p>The number of significant figures in 0.06900 is?</p>
-            <button onclick="showQuestion(15)">A) 4 </button>
-            <button onclick="showDeadEnd(14)">B) 5 </button>
+            <p>What is the formula for calculating the period of a pendulum?</p>
+            <button onclick="showQuestion(15)">A) \( T = 2\pi \sqrt{\frac{L}{g}} \)</button>
+            <button onclick="showDeadEnd(14)">B) \( T = \frac{1}{f} \)</button>
         </div>
 
         <div id="question15" class="question">
@@ -182,102 +182,275 @@
         <div id="question17" class="question">
             <p>What is the formula for calculating the force exerted by an electric field on a charge?</p>
             <button onclick="showDeadEnd(17)">A) \( F = qV \)</button>
-            <button onclick="showFinish()">B) \( F = qE \)</button>
+            <button onclick="showQuestion(18)">B) \( F = qE \)</button>
         </div>
 
-                <!-- Dead Ends -->
+        <div id="question18" class="question">
+            <p>What is the escape velocity from Earth?</p>
+            <button onclick="showQuestion(19)">A) Approximately 11.2 km/s</button>
+            <button onclick="showDeadEnd(18)">B) Approximately 7.9 km/s</button>
+        </div>
+
+        <div id="question19" class="question">
+            <p>What is the unit of electric current?</p>
+            <button onclick="showDeadEnd(19)">A) Volt</button>
+            <button onclick="showQuestion(20)">B) Ampere</button>
+        </div>
+
+        <div id="question20" class="question">
+            <p>What is the wavelength range of visible light?</p>
+            <button onclick="showQuestion(21)">A) 400-700 nm</button>
+            <button onclick="showDeadEnd(20)">B) 100-400 nm</button>
+        </div>
+
+        <div id="question21" class="question">
+            <p>What is the formula for calculating kinetic energy?</p>
+            <button onclick="showDeadEnd(21)">A) \( KE = mv \)</button>
+            <button onclick="showQuestion(22)">B) \( KE = \frac{1}{2}mv^2 \)</button>
+        </div>
+
+        <div id="question22" class="question">
+            <p>What is the value of the Boltzmann constant?</p>
+            <button onclick="showQuestion(23)">A) Approximately 1.38 x 10^-23 J/K</button>
+            <button onclick="showDeadEnd(22)">B) Approximately 6.02 x 10^23 J/K</button>
+        </div>
+
+        <div id="question23" class="question">
+            <p>What is the formula for calculating the frequency of a wave?</p>
+            <button onclick="showQuestion(24)">A) \( f = \frac{v}{\lambda} \)</button>
+            <button onclick="showDeadEnd(23)">B) \( f = \frac{\lambda}{v} \)</button>
+        </div>
+
+        <div id="question24" class="question">
+            <p>What is the formula for calculating the magnetic force on a moving charge?</p>
+            <button onclick="showDeadEnd(24)">A) \( F = qE \)</button>
+            <button onclick="showQuestion(25)">B) \( F = qvB \sin(\theta) \)</button>
+        </div>
+
+        <div id="question25" class="question">
+            <p>What is the formula for calculating the pressure at a depth in a fluid?</p>
+            <button onclick="showQuestion(26)">A) \( P = \rho gh \)</button>
+            <button onclick="showDeadEnd(25)">B) \( P = \frac{F}{A} \)</button>
+        </div>
+
+        <div id="question26" class="question">
+            <p>What is the value of the universal gas constant R?</p>
+            <button onclick="showQuestion(27)">A) Approximately 8.314 J/(mol·K)</button>
+            <button onclick="showDeadEnd(26)">B) Approximately 1.38 x 10^-23 J/K</button>
+        </div>
+
+        <div id="question27" class="question">
+            <p>What is the formula for calculating the momentum of an object?</p>
+            <button onclick="showQuestion(28)">A) \( p = mv \)</button>
+            <button onclick="showDeadEnd(27)">B) \( p = \frac{mv^2}{2} \)</button>
+        </div>
+
+        <div id="question28" class="question">
+            <p>What is the formula for calculating the potential energy of an object at height h?</p>
+            <button onclick="showDeadEnd(28)">A) \( PE = \frac{1}{2}mv^2 \)</button>
+            <button onclick="showQuestion(29)">B) \( PE = mgh \)</button>
+        </div>
+
+        <div id="question29" class="question">
+            <p>What is the value of Planck's constant?</p>
+            <button onclick="showQuestion(30)">A) Approximately 6.626 x 10^-34 Js</button>
+            <button onclick="showDeadEnd(29)">B) Approximately 3.00 x 10^8 m/s</button>
+        </div>
+
+        <div id="question30" class="question">
+            <p>What is the formula for calculating the angular momentum of a rotating object?</p>
+            <button onclick="showFinish()">A) \( L = I\omega \)</button>
+            <button onclick="showDeadEnd(30)">B) \( L = mr^2 \)</button>
+        </div>
+
+        <!-- Dead Ends -->
         <div id="deadend1" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait1" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back1" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back1" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait1" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend2" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait2" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back2" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back2" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait2" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend3" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait3" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back3" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back3" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait3" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend4" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait4" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back4" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back4" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait4" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend5" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait5" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back5" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back5" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait5" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend6" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait6" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back6" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back6" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait6" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend7" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait7" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back7" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back7" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait7" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend8" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait8" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back8" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back8" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait8" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend9" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait9" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back9" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back9" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait9" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend10" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait10" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back10" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back10" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait10" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend11" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait11" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back11" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back11" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait11" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend12" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait12" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back12" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back12" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait12" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend13" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait13" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back13" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back13" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait13" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend14" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait14" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back14" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back14" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait14" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend15" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait15" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back15" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back15" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait15" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend16" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait16" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back16" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back16" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait16" class="wait-message">Please wait...</p>
         </div>
+
         <div id="deadend17" class="result">
-            <p>Dead End: Go back to Start</p>
-            <p id="wait17" class="wait-message">15 second delay for wrong answer</p>
-            <button id="back17" onclick="goBackToStart()" disabled>Go Back</button>
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back17" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait17" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend18" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back18" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait18" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend19" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back19" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait19" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend20" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back20" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait20" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend21" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back21" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait21" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend22" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back22" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait22" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend23" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back23" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait23" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend24" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back24" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait24" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend25" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back25" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait25" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend26" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back26" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait26" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend27" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back27" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait27" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend28" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back28" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait28" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend29" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back29" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait29" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend30" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back30" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait30" class="wait-message">Please wait...</p>
         </div>
 
         <!-- Finish -->
         <div id="finish" class="result">
-            <p>Congratulations! You've completed the maze.</p>
-            <p>The code word is 'WRAP'.</p>
+            <p>Code word is </p>
+            <button onclick="goBackToStart()">Back to Start</button>
         </div>
     </div>
 </body>
 </html>
+
 
