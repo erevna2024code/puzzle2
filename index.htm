@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math and Physics Maze</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(180deg, #000000, #4a4a4a, #000000);
+            color: red;
+            overflow: hidden;
+        }
+        .content {
+            text-align: center;
+        }
+        .question, .result {
+            display: none;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff3333;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #ff6666;
+        }
+        .wait-message {
+            display: none;
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function showQuestion(number) {
+            hideAll();
+            document.getElementById('question' + number).style.display = 'block';
+        }
+
+        function showDeadEnd(number) {
+            hideAll();
+            document.getElementById('deadend' + number).style.display = 'block';
+            document.getElementById('wait' + number).style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('wait' + number).style.display = 'none';
+                document.getElementById('back' + number).disabled = false;
+            }, 15000);
+        }
+
+        function showFinish() {
+            hideAll();
+            document.getElementById('finish').style.display = 'block';
+        }
+
+        function goBackToStart() {
+            hideAll();
+            document.getElementById('start').style.display = 'block';
+        }
+
+        function hideAll() {
+            const elements = document.querySelectorAll('.question, .result, .wait-message');
+            elements.forEach(element => element.style.display = 'none');
+            const buttons = document.querySelectorAll('.result button');
+            buttons.forEach(button => button.disabled = true);
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div id="start">
+            <button onclick="showQuestion(1)">Start</button>
+        </div>
+
+        <!-- Questions -->
+        <div id="question1" class="question">
+            <p>What is the value of the mathematical constant π (pi)?</p>
+            <button onclick="showQuestion(2)">A) Approximately 3.14159</button>
+            <button onclick="showDeadEnd(1)">B) Approximately 2.71828</button>
+        </div>
+
+        <div id="question2" class="question">
+            <p>What is the area of a circle with radius r?</p>
+            <button onclick="showDeadEnd(2)">A) 2πr</button>
+            <button onclick="showQuestion(3)">B) πr^2</button>
+        </div>
+
+        <div id="question3" class="question">
+            <p>What is the derivative of cos(x)?</p>
+            <button onclick="showQuestion(4)">A) -sin(x)</button>
+            <button onclick="showDeadEnd(3)">B) sin(x)</button>
+        </div>
+
+        <div id="question4" class="question">
+            <p>What is the SI unit of force?</p>
+            <button onclick="showQuestion(5)">A) Newton</button>
+            <button onclick="showDeadEnd(4)">B) Joule</button>
+        </div>
+
+        <div id="question5" class="question">
+            <p>What is the value of Avogadro's number?</p>
+            <button onclick="showQuestion(6)">A) Approximately 6.022 x 10^23</button>
+            <button onclick="showDeadEnd(5)">B) Approximately 3.142</button>
+        </div>
+
+        <div id="question6" class="question">
+            <p>What is the sum of the angles in a triangle?</p>
+            <button onclick="showQuestion(7)">A) 180 degrees</button>
+            <button onclick="showDeadEnd(6)">B) 90 degrees</button>
+        </div>
+
+        <div id="question7" class="question">
+            <p>What is the speed of sound in air at room temperature?</p>
+            <button onclick="showDeadEnd(7)">A) Approximately 300 m/s</button>
+            <button onclick="showQuestion(8)">B) Approximately 343 m/s</button>
+        </div>
+
+        <div id="question8" class="question">
+            <p>What is the integral of e^x dx?</p>
+            <button onclick="showQuestion(9)">A) e^x + C</button>
+            <button onclick="showDeadEnd(8)">B) ln(x) + C</button>
+        </div>
+
+        <div id="question9" class="question">
+            <p>What is the value of the mathematical constant e?</p>
+            <button onclick="showQuestion(10)">A) Approximately 2.71828</button>
+            <button onclick="showDeadEnd(9)">B) Approximately 3.14159</button>
+        </div>
+
+        <div id="question10" class="question">
+            <p>What is the SI unit of electric charge?</p>
+            <button onclick="showDeadEnd(10)">A) Volt</button>
+            <button onclick="showQuestion(11)">B) Coulomb</button>
+        </div>
+
+        <div id="question11" class="question">
+            <p>What is the formula for calculating work?</p>
+            <button onclick="showQuestion(12)">A) Force × Distance</button>
+            <button onclick="showDeadEnd(11)">B) Mass × Acceleration</button>
+        </div>
+
+        <div id="question12" class="question">
+            <p>What is the value of the gravitational acceleration on Earth?</p>
+            <button onclick="showQuestion(13)">A) Approximately 9.8 m/s^2</button>
+            <button onclick="showDeadEnd(12)">B) Approximately 6.67 x 10^-11 N(m/kg)^2</button>
+        </div>
+
+        <div id="question13" class="question">
+            <p>What is the formula for calculating pressure?</p>
+            <button onclick="showQuestion(14)">A) Force / Area</button>
+            <button onclick="showDeadEnd(13)">B) Mass × Acceleration</button>
+        </div>
+
+        <div id="question14" class="question">
+            <p>What is the formula for calculating the period of a pendulum?</p>
+            <button onclick="showQuestion(15)">A)  T = 2pi*sqrt{L/g}</button>
+            <button onclick="showDeadEnd(14)">B)  T = {1 / f}</button>
+        </div> 
+
+        <div id="question15" class="question">
+            <p>What is the formula for calculating the energy of a photon?</p>
+            <button onclick="showDeadEnd(15)">A)  E = mc^2</button>
+            <button onclick="showQuestion(16)">B) E = hf </button>
+        </div>
+
+        <div id="question16" class="question">
+            <p>What is the formula for calculating the volume of a sphere?</p>
+            <button onclick="showQuestion(17)">A) V = 4/3* pi r^3 </button>
+            <button onclick="showDeadEnd(16)">B)  V = pi r^2</button>
+        </div>
+
+        <div id="question17" class="question">
+            <p>What is the formula for calculating the force exerted by an electric field on a charge?</p>
+            <button onclick="showDeadEnd(17)">A) F = qV </button>
+            <button onclick="showQuestion(18)">B) F = qE </button>
+        </div>
+
+        <div id="question18" class="question">
+            <p>What is the escape velocity from Earth?</p>
+            <button onclick="showQuestion(19)">A) Approximately 11.2 km/s</button>
+            <button onclick="showDeadEnd(18)">B) Approximately 7.9 km/s</button>
+        </div>
+
+        <div id="question19" class="question">
+            <p>What is the unit of electric current?</p>
+            <button onclick="showDeadEnd(19)">A) Volt</button>
+            <button onclick="showQuestion(20)">B) Ampere</button>
+        </div>
+
+        <div id="question20" class="question">
+            <p>What is the wavelength range of visible light?</p>
+            <button onclick="showQuestion(21)">A) 400-700 nm</button>
+            <button onclick="showDeadEnd(20)">B) 100-400 nm</button>
+        </div>
+
+        <div id="question21" class="question">
+            <p>What is the formula for calculating kinetic energy?</p>
+            <button onclick="showDeadEnd(21)">A) KE = mv </button>
+            <button onclick="showQuestion(22)">B) KE = (1 / 2)mv^2</button>
+        </div>
+
+        <div id="question22" class="question">
+            <p>What is the value of the Boltzmann constant?</p>
+            <button onclick="showQuestion(23)">A) Approximately 1.38 x 10^-23 J/K</button>
+            <button onclick="showDeadEnd(22)">B) Approximately 6.02 x 10^23 J/K</button>
+        </div>
+
+        <div id="question23" class="question">
+            <p>What is the formula for calculating the frequency of a wave?</p>
+            <button onclick="showQuestion(24)">A)  f = (v \ lambda) </button>
+            <button onclick="showDeadEnd(23)">B)  f = (lambda / v) </button>
+        </div>
+
+        <div id="question24" class="question">
+            <p>What is the formula for calculating the magnetic force on a moving charge?</p>
+            <button onclick="showDeadEnd(24)">A) F = qE </button>
+            <button onclick="showQuestion(25)">B) F = qvB*sin(theta)</button>
+        </div>
+
+        <div id="question25" class="question">
+            <p>What is the formula for calculating the pressure at a depth in a fluid?</p>
+            <button onclick="showQuestion(26)">A) P = rho*gh</button>
+            <button onclick="showDeadEnd(25)">B) P =(F /A)</button>
+        </div>
+
+        <div id="question26" class="question">
+            <p>What is the value of the universal gas constant R?</p>
+            <button onclick="showQuestion(27)">A) Approximately 8.314 J/(mol·K)</button>
+            <button onclick="showDeadEnd(26)">B) Approximately 1.38 x 10^-23 J/K</button>
+        </div>
+
+        <div id="question27" class="question">
+            <p>What is the formula for calculating the momentum of an object?</p>
+            <button onclick="showQuestion(28)">A) p = mv</button>
+            <button onclick="showDeadEnd(27)">B) p = mv^2 / 2 </button>
+        </div>
+
+        <div id="question28" class="question">
+            <p>What is the formula for calculating the potential energy of an object at height h?</p>
+            <button onclick="showDeadEnd(28)">A) PE =(1/2)*mv^2 </button>
+            <button onclick="showQuestion(29)">B) PE = mgh</button>
+        </div>
+
+        <div id="question29" class="question">
+            <p>What is the value of Planck's constant?</p>
+            <button onclick="showQuestion(30)">A) Approximately 6.626 x 10^-34 Js</button>
+            <button onclick="showDeadEnd(29)">B) Approximately 3.00 x 10^8 m/s</button>
+        </div>
+
+        <div id="question30" class="question">
+            <p>What is the formula for calculating the angular momentum of a rotating object?</p>
+            <button onclick="showFinish()">A)  L = I\omega </button>
+            <button onclick="showDeadEnd(30)">B) L = mr^2 </button>
+        </div>
+
+        <!-- Dead Ends -->
+        <div id="deadend1" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back1" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait1" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend2" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back2" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait2" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend3" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back3" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait3" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend4" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back4" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait4" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend5" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back5" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait5" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend6" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back6" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait6" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend7" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back7" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait7" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend8" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back8" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait8" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend9" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back9" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait9" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend10" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back10" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait10" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend11" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back11" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait11" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend12" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back12" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait12" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend13" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back13" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait13" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend14" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back14" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait14" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend15" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back15" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait15" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend16" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back16" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait16" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend17" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back17" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait17" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend18" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back18" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait18" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend19" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back19" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait19" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend20" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back20" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait20" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend21" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back21" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait21" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend22" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back22" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait22" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend23" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back23" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait23" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend24" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back24" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait24" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend25" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back25" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait25" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend26" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back26" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait26" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend27" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back27" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait27" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend28" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back28" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait28" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend29" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back29" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait29" class="wait-message">Please wait...</p>
+        </div>
+
+        <div id="deadend30" class="result">
+            <p>Dead End! Wrong Answer.</p>
+            <button id="back30" onclick="goBackToStart()" disabled>Back to Start</button>
+            <p id="wait30" class="wait-message">Please wait...</p>
+        </div>
+
+        <!-- Finish -->
+        <div id="finish" class="result">
+            <p>Congratulations! You've completed the maze.</p>
+            <p>Code Word is .</p>
+            <button onclick="goBackToStart()">Back to Start</button>
+        </div>
+    </div>
+</body>
+</html>
